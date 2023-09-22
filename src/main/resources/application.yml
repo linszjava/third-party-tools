@@ -1,0 +1,65 @@
+# 应用名
+spring:
+  application:
+    name: third-party-config-service
+#  数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/third_party_tools?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: linsz99@
+    type: com.alibaba.druid.pool.DruidDataSource
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+
+# 端口
+server:
+  port: 8888
+
+#mysql配置
+
+# knife4j配置
+knife4j:
+  enable: true
+  openapi:
+    title: 接口文档
+    description: "第三方配置接口文档"
+    email: linszjava@gmail.com
+    concat: linsz
+    url: http://linszjava.github.io
+    version: 1.2
+    license: Apache 2.0
+    license-url: https://stackoverflow.com/
+    terms-of-service-url: https://stackoverflow.com/
+    group:
+      test1:
+        group-name: 文件接口-工具-第三方配置
+        api-rule: package
+        api-rule-resources:
+          - com.lin.tools
+# 自定义配置
+sys:
+  config:
+    common:
+      backend-url: "http://localhost:${server.port}"
+      front-url: "http://localhost:8080"
+
+# mybatis-plus配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      logic-delete-value: DELETED
+      logic-not-delete-value: NOT_DELETE
+      logic-delete-field: deleteFlag
+      id-type: auto
+
+#
+#oss:
+#  endpoint: oss-cn-beijing.aliyuncs.com

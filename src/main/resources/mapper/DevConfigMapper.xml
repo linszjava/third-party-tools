@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lin.tools.third.config.mapper.DevConfigMapper">
+
+    <resultMap id="BaseResultMap" type="com.lin.tools.third.config.entity.DevConfig">
+            <id property="id" column="ID" jdbcType="VARCHAR"/>
+            <result property="configKey" column="CONFIG_KEY" jdbcType="VARCHAR"/>
+            <result property="configValue" column="CONFIG_VALUE" jdbcType="VARCHAR"/>
+            <result property="category" column="CATEGORY" jdbcType="VARCHAR"/>
+            <result property="remark" column="REMARK" jdbcType="VARCHAR"/>
+            <result property="sortCode" column="SORT_CODE" jdbcType="INTEGER"/>
+            <result property="extJson" column="EXT_JSON" jdbcType="VARCHAR"/>
+            <result property="deleteFlag" column="DELETE_FLAG" jdbcType="VARCHAR"/>
+            <result property="createTime" column="CREATE_TIME" jdbcType="TIMESTAMP"/>
+            <result property="createUser" column="CREATE_USER" jdbcType="VARCHAR"/>
+            <result property="updateTime" column="UPDATE_TIME" jdbcType="TIMESTAMP"/>
+            <result property="updateUser" column="UPDATE_USER" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID,CONFIG_KEY,CONFIG_VALUE,
+        CATEGORY,REMARK,SORT_CODE,
+        EXT_JSON,DELETE_FLAG,CREATE_TIME,
+        CREATE_USER,UPDATE_TIME,UPDATE_USER
+    </sql>
+</mapper>
